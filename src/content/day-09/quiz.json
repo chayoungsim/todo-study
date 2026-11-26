@@ -1,0 +1,57 @@
+[
+  {
+    "question": "제어 컴포넌트에 대한 설명으로 올바른 것은?",
+    "choices": [
+      "입력값을 state 가 가지고, input 은 그 값을 보여주고 변경을 알리기만 한다",
+      "input 이 값을 스스로 기억하고 React 는 관여하지 않는다",
+      "DOM 을 직접 조작해서 값을 읽는다",
+      "form 태그를 사용하지 않는 컴포넌트다"
+    ],
+    "answer": 0,
+    "explanation": "제어 컴포넌트는 value 를 state 에 두고 onChange 로 state 를 갱신해, 입력값의 출처가 항상 React state 하나가 되게 합니다."
+  },
+  {
+    "question": "<input value={name} /> 처럼 value 만 주고 onChange 를 빼면 어떻게 될까?",
+    "choices": [
+      "정상적으로 입력된다",
+      "자동으로 state 가 갱신된다",
+      "에러 없이 값이 저장만 안 된다",
+      "입력해도 화면의 값이 바뀌지 않아 입력이 막힌 것처럼 보인다"
+    ],
+    "answer": 3,
+    "explanation": "화면의 값은 state 가 정하는데 state 를 갱신하는 코드가 없으므로, 타이핑해도 값이 바뀌지 않습니다. React 는 이 경우 경고도 보여줍니다."
+  },
+  {
+    "question": "setForm((prev) => ({ ...prev, [name]: value })) 에서 [name]: value 의 의미는?",
+    "choices": [
+      "name 이라는 이름의 속성에 value 를 넣는다",
+      "name 변수에 담긴 문자열을 속성 이름으로 사용해 value 를 넣는다",
+      "배열 [name] 을 value 로 바꾼다",
+      "name 과 value 를 배열로 묶는다"
+    ],
+    "answer": 1,
+    "explanation": "대괄호는 계산된 속성 이름입니다. name 변수의 값(예: \"email\")이 속성 이름이 되어, 핸들러 하나로 여러 필드를 처리할 수 있습니다."
+  },
+  {
+    "question": "form 제출 핸들러에서 e.preventDefault() 를 호출하는 이유는?",
+    "choices": [
+      "state 를 초기화하기 위해",
+      "입력값을 지우기 위해",
+      "이벤트가 자식으로 전달되지 않게 하려고",
+      "브라우저의 기본 동작인 페이지 새로고침을 막기 위해"
+    ],
+    "answer": 3,
+    "explanation": "form 제출의 기본 동작은 페이지를 이동하거나 새로고침하는 것입니다. React 앱에서는 이를 막고 직접 제출을 처리합니다."
+  },
+  {
+    "question": "검증 에러 메시지를 다루는 가장 좋은 방법은?",
+    "choices": [
+      "useEffect 로 입력값을 감시해 에러 state 를 따로 갱신한다",
+      "form 값에서 렌더링 중에 계산하고, 제출을 시도한 뒤에 보여준다",
+      "키를 누를 때마다 alert 으로 알린다",
+      "에러 메시지를 전역 변수에 저장한다"
+    ],
+    "answer": 1,
+    "explanation": "에러는 form 값으로 계산할 수 있는 파생 값이라 별도 state 와 effect 가 필요 없습니다. 입력 전부터 에러를 보여주지 않도록 submitted 같은 state 를 하나 둡니다."
+  }
+]

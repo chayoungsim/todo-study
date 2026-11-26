@@ -7,6 +7,8 @@ export interface DayMeta {
   minutes: number;
   /** 한 줄 요약 (코스 목록에 표시) */
   summary: string;
+  /** 코드 예제(Sandpack)에서 추가로 쓸 npm 패키지. 예: { zustand: "^5.0.0" } */
+  dependencies?: Record<string, string>;
 }
 
 /** 객관식 퀴즈 문항 */

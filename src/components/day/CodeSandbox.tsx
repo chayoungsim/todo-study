@@ -9,10 +9,12 @@ import { useTheme } from "next-themes";
 interface CodeSandboxProps {
   /** example.tsx 원문. default export 컴포넌트가 미리보기에 렌더링된다. */
   code: string;
+  /** 예제에서 추가로 쓸 npm 패키지 (패키지 이름: 버전 범위) */
+  dependencies?: Record<string, string>;
 }
 
 /** 수정하고 바로 실행해볼 수 있는 라이브 코드 에디터 (Sandpack). */
-export default function CodeSandbox({ code }: CodeSandboxProps) {
+export default function CodeSandbox({ code, dependencies }: CodeSandboxProps) {
   // 앱의 라이트/다크 전환 버튼과 에디터 테마를 맞춘다. ("auto" 는 OS 설정만 따른다)
   const { resolvedTheme } = useTheme();
   return (
@@ -20,6 +22,7 @@ export default function CodeSandbox({ code }: CodeSandboxProps) {
       template="react-ts"
       theme={resolvedTheme === "dark" ? "dark" : "light"}
       files={{ "/App.tsx": code }}
+      customSetup={dependencies ? { dependencies } : undefined}
       options={{ activeFile: "/App.tsx" }}
     >
       {/* 좁은 화면에서는 에디터와 미리보기를 세로로 쌓는다. */}

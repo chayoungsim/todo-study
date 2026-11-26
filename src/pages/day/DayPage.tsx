@@ -58,7 +58,12 @@ function DayBody({ day }: { day: number }) {
         <h2 className="text-xl font-semibold">코드 예제</h2>
         <p className="text-sm text-muted-foreground">코드를 직접 수정하면 오른쪽(모바일은 아래) 미리보기가 바뀝니다.</p>
         <Suspense fallback={<StateScreen kind="loading" title="에디터를 불러오는 중입니다." />}>
-          <CodeSandbox code={content.example} />
+          {/* Day 가 바뀌면 코드와 패키지 설정이 섞이지 않도록 새로 만든다. */}
+          <CodeSandbox
+            key={content.day}
+            code={content.example}
+            dependencies={content.dependencies}
+          />
         </Suspense>
       </section>
 

@@ -1,0 +1,57 @@
+[
+  {
+    "question": "<form action={subscribe}> 처럼 action 에 함수를 넘기면 제출 시 그 함수는 무엇을 받을까?",
+    "choices": [
+      "이벤트 객체 e",
+      "아무것도 받지 않는다",
+      "입력값이 담긴 FormData",
+      "state 객체"
+    ],
+    "answer": 2,
+    "explanation": "form action 함수는 제출된 폼 데이터를 FormData 로 받습니다. preventDefault() 도 직접 호출할 필요가 없습니다."
+  },
+  {
+    "question": "useActionState 가 돌려주는 [state, formAction, isPending] 에서 state 는?",
+    "choices": [
+      "입력창의 현재 값",
+      "항상 boolean",
+      "에러 객체",
+      "action 이 마지막으로 반환한 값(처음에는 초기값)"
+    ],
+    "answer": 3,
+    "explanation": "state 는 action 이 마지막으로 반환한 값입니다. 처음에는 useActionState 의 두 번째 인자인 초기값입니다."
+  },
+  {
+    "question": "action 함수의 올바른 시그니처는? (useActionState 에 넘기는 함수)",
+    "choices": [
+      "(이전 state, formData) => 새 state",
+      "(formData) => void",
+      "(event) => void",
+      "() => state"
+    ],
+    "answer": 0,
+    "explanation": "useActionState 에 넘기는 action 은 이전 state 와 formData 를 받아 새 state 를 반환합니다. reducer 와 비슷한 모양입니다."
+  },
+  {
+    "question": "useFormStatus 에 대한 설명으로 올바른 것은?",
+    "choices": [
+      "form 바깥 어디서나 form 의 상태를 읽을 수 있다",
+      "폼 입력값을 저장한다",
+      "가장 가까운 부모 <form> 의 제출 진행 상태를 form 안쪽 자식 컴포넌트에서 읽게 해 준다",
+      "서버에 요청을 보낸다"
+    ],
+    "answer": 2,
+    "explanation": "useFormStatus 는 <form> 안에 렌더링되는 자식 컴포넌트에서 호출해야 하며, 부모 폼의 pending 상태를 props 전달 없이 읽을 수 있게 해 줍니다."
+  },
+  {
+    "question": "form action 이 끝난 뒤 비제어 입력창은 어떻게 될까?",
+    "choices": [
+      "값이 그대로 유지된다",
+      "React 가 자동으로 초기화한다. 남기려면 반환값으로 다시 채워야 한다",
+      "에러가 발생한다",
+      "입력창이 사라진다"
+    ],
+    "answer": 1,
+    "explanation": "action 이 끝나면 React 가 폼을 초기화합니다. 실패했을 때 입력값을 남기려면 action 이 값을 state 로 반환하고 defaultValue 로 다시 채웁니다."
+  }
+]

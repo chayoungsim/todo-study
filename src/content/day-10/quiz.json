@@ -1,0 +1,57 @@
+[
+  {
+    "question": "ref.current 의 값을 바꾸면 어떻게 될까?",
+    "choices": [
+      "컴포넌트가 다시 렌더링된다",
+      "에러가 발생한다",
+      "부모 컴포넌트가 다시 렌더링된다",
+      "값만 바뀌고 다시 렌더링되지는 않는다"
+    ],
+    "answer": 3,
+    "explanation": "ref 는 렌더링과 무관한 저장소입니다. 값을 바꿔도 React 에 알리지 않으므로 화면이 다시 그려지지 않습니다."
+  },
+  {
+    "question": "화면에 보여줄 값과 화면과 무관하게 기억만 할 값을 각각 어디에 두는 것이 알맞을까?",
+    "choices": [
+      "둘 다 ref",
+      "화면에 보일 값은 state, 기억만 할 값은 ref",
+      "둘 다 state",
+      "화면에 보일 값은 ref, 기억만 할 값은 state"
+    ],
+    "answer": 1,
+    "explanation": "화면에 반영돼야 하는 값은 바뀔 때 다시 렌더링되는 state 에, 타이머 id 처럼 화면과 무관한 값은 ref 에 둡니다."
+  },
+  {
+    "question": "const inputRef = useRef<HTMLInputElement>(null) 에서 렌더링 도중 inputRef.current 의 값은?",
+    "choices": [
+      "항상 input 요소다",
+      "undefined",
+      "null (DOM 이 만들어진 뒤에야 요소를 가리킨다)",
+      "빈 문자열"
+    ],
+    "answer": 2,
+    "explanation": "초기값이 null 이고, React 가 요소를 화면에 붙인 뒤에 current 에 DOM 요소를 넣어 줍니다. 그래서 ?. 로 null 을 처리해야 합니다."
+  },
+  {
+    "question": "ref 를 읽고 쓰기에 알맞은 위치는?",
+    "choices": [
+      "이벤트 핸들러와 effect 안",
+      "컴포넌트 함수 본문의 렌더링 도중",
+      "JSX 안의 표현식",
+      "조건문 안에서 새로 만든 useRef"
+    ],
+    "answer": 0,
+    "explanation": "ref 는 변경을 React 에 알리지 않으므로 렌더링 도중 읽고 쓰면 결과가 일관되지 않을 수 있습니다. 이벤트 핸들러나 effect 안에서만 사용하세요."
+  },
+  {
+    "question": "다음 중 ref 가 가장 알맞은 용도는?",
+    "choices": [
+      "카운터의 현재 값을 화면에 보여주기",
+      "목록 데이터를 저장하기",
+      "버튼을 눌렀을 때 입력창에 포커스 주기",
+      "다크모드 여부를 저장하기"
+    ],
+    "answer": 2,
+    "explanation": "포커스, 스크롤, 크기 측정처럼 선언적 방식으로 표현하기 어려운 DOM 조작이 ref 의 대표적인 용도입니다. 화면에 쓰는 값은 state 입니다."
+  }
+]

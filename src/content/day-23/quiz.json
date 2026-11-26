@@ -1,0 +1,57 @@
+[
+  {
+    "question": "React 앱 안에서 다른 화면으로 이동할 때 <a href> 대신 Link 를 쓰는 이유는?",
+    "choices": [
+      "Link 가 더 예뻐서",
+      "a 태그는 React 에서 쓸 수 없어서",
+      "Link 는 서버에 요청을 보내서",
+      "페이지 전체를 새로고침하지 않고 주소만 바꿔 앱 상태를 유지하기 위해"
+    ],
+    "answer": 3,
+    "explanation": "a 링크를 누르면 페이지가 새로고침되어 React 상태가 모두 사라집니다. Link 는 새로고침 없이 주소만 바꾸고 알맞은 컴포넌트를 보여줍니다."
+  },
+  {
+    "question": "<Route path=\"*\" element={<NotFound />} /> 의 역할은?",
+    "choices": [
+      "다른 어떤 Route 에도 맞지 않을 때 보여줄 404 화면이다",
+      "모든 주소에서 항상 NotFound 를 보여준다",
+      "홈 화면을 지정한다",
+      "라우터를 초기화한다"
+    ],
+    "answer": 0,
+    "explanation": "* 는 모든 주소에 맞는 와일드카드로, 앞의 Route 들이 맞지 않을 때 대체 화면(404)을 보여줍니다."
+  },
+  {
+    "question": "<NavLink to=\"/\"> 가 /about 에서도 활성으로 표시되는 문제를 막는 속성은?",
+    "choices": [
+      "exact",
+      "strict",
+      "end",
+      "only"
+    ],
+    "answer": 2,
+    "explanation": "to=\"/\" 는 모든 주소가 \"/\" 로 시작하므로 항상 일치로 봅니다. end 를 주면 정확히 \"/\" 일 때만 활성이 됩니다."
+  },
+  {
+    "question": "공통 레이아웃(메뉴 등)을 모든 페이지에 보여주면서 페이지 내용만 바꾸려면?",
+    "choices": [
+      "모든 페이지 컴포넌트에 메뉴를 복사한다",
+      "레이아웃 컴포넌트에 Outlet 을 두고, 레이아웃 Route 의 자식으로 페이지 Route 를 선언한다",
+      "App 에 if 문을 쓴다",
+      "iframe 으로 나눈다"
+    ],
+    "answer": 1,
+    "explanation": "레이아웃 컴포넌트의 Outlet 자리에 맞는 자식 Route 의 element 가 렌더링됩니다. path 가 없는 Route 는 레이아웃 전용입니다."
+  },
+  {
+    "question": "이 사이트의 코드 예제에서 BrowserRouter 대신 MemoryRouter 를 쓰는 이유는?",
+    "choices": [
+      "MemoryRouter 가 더 빨라서",
+      "BrowserRouter 가 사라져서",
+      "서버가 필요 없어서",
+      "예제가 iframe 안에서 실행되어 주소창 대신 메모리에서 주소를 관리하는 편이 알맞아서"
+    ],
+    "answer": 3,
+    "explanation": "BrowserRouter 는 실제 주소창을 바꿉니다. iframe 안의 예제에는 메모리에서 주소를 관리하는 MemoryRouter 가 알맞고, 사용법은 같습니다."
+  }
+]

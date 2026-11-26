@@ -1,0 +1,57 @@
+[
+  {
+    "question": "const [user, setUser] = useState(null) 에 나중에 User 객체를 넣으려면 타입을 어떻게 알려야 할까?",
+    "choices": [
+      "useState(null) 이면 충분하다",
+      "useState<User | null>(null)",
+      "useState(User)",
+      "useState<any>(null) 이 가장 좋다"
+    ],
+    "answer": 1,
+    "explanation": "초기값 null 만으로는 TypeScript 가 나중에 User 가 들어올 것을 알 수 없습니다. 제네릭으로 User | null 이라고 알려 줍니다. any 는 타입 검사를 꺼 버려 피해야 합니다."
+  },
+  {
+    "question": "type LoadState = { status: \"loading\" } | { status: \"success\"; data: string } 에서 state.status === \"success\" 를 확인한 뒤에야 state.data 를 쓸 수 있는 이유는?",
+    "choices": [
+      "TypeScript 가 확인한 값으로 타입을 좁혀 주기(판별 유니온) 때문이다",
+      "JavaScript 가 자동으로 data 를 만들어 주기 때문이다",
+      "data 가 항상 존재하기 때문이다",
+      "if 문이 data 를 생성하기 때문이다"
+    ],
+    "answer": 0,
+    "explanation": "status 로 어느 상태인지 확인하면 TypeScript 가 그 분기 안에서 타입을 좁혀, success 일 때만 data 에 접근하도록 허용합니다."
+  },
+  {
+    "question": "function List<T>({ items }: { items: T[] }) 에서 T 의 역할은?",
+    "choices": [
+      "항상 string 을 의미한다",
+      "컴포넌트 이름이다",
+      "호출할 때 정해지는 타입을 나타내는 타입 매개변수다",
+      "상수 값이다"
+    ],
+    "answer": 2,
+    "explanation": "T 는 제네릭 타입 매개변수로, List 를 사용하는 시점에 items 의 타입에 맞춰 정해집니다. 어떤 타입의 항목이든 받는 재사용 컴포넌트를 만들 수 있습니다."
+  },
+  {
+    "question": "User 타입에서 name 과 email 필드만 골라 새 타입을 만드는 유틸리티 타입은?",
+    "choices": [
+      "Partial<User>",
+      "Omit<User>",
+      "Record<User>",
+      "Pick<User, \"name\" | \"email\">"
+    ],
+    "answer": 3,
+    "explanation": "Pick 은 지정한 필드만 골라 새 타입을 만듭니다. Partial 은 모든 필드를 선택으로, Omit 은 지정한 필드를 뺀 나머지로 만듭니다."
+  },
+  {
+    "question": "TypeScript 의 타입으로는 보장할 수 없어서, 실행 중에 직접 검증해야 하는 값은?",
+    "choices": [
+      "컴포넌트의 props",
+      "state 의 초기값",
+      "외부에서 받아온 데이터(API 응답, JSON.parse 결과 등)",
+      "함수의 반환값"
+    ],
+    "answer": 2,
+    "explanation": "타입은 실행 전(컴파일 시점)에만 존재합니다. 서버 응답이나 파일처럼 외부에서 오는 데이터는 실제로 그 모양인지 실행 중에 검증해야 합니다."
+  }
+]

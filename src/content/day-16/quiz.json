@@ -1,0 +1,57 @@
+[
+  {
+    "question": "컴포넌트의 props 가 계속 늘어날 때 React 가 권장하는 접근은?",
+    "choices": [
+      "상속으로 새 컴포넌트를 만든다",
+      "작은 컴포넌트를 조립하는 합성(Composition)을 쓴다",
+      "전역 변수를 쓴다",
+      "props 를 문자열 하나로 합친다"
+    ],
+    "answer": 1,
+    "explanation": "React 는 상속보다 합성을 권장합니다. 설정값을 넘기는 대신 children 이나 하위 컴포넌트로 내용을 직접 조립합니다."
+  },
+  {
+    "question": "Tabs, Accordion 처럼 여러 조각이 하나의 상태를 공유해야 할 때 알맞은 패턴은?",
+    "choices": [
+      "Render Props 만 사용",
+      "모든 조각에 같은 state 를 각각 만든다",
+      "Compound Components (부모가 Context 로 상태를 제공)",
+      "전역 변수에 저장"
+    ],
+    "answer": 2,
+    "explanation": "부모(Tabs)가 선택 상태를 들고 Context 로 제공하면, Tab, Panel 같은 조각들이 사용하는 쪽에 상태를 노출하지 않고도 서로 연동됩니다."
+  },
+  {
+    "question": "Tabs.Tab = Tab; 처럼 컴포넌트에 속성을 붙이는 이유는?",
+    "choices": [
+      "성능을 높이기 위해",
+      "<Tabs.Tab> 형태로 쓸 수 있게 해 관련 조각들을 한 곳에 묶기 위해",
+      "Tab 을 전역에 등록하기 위해",
+      "Context 를 만들기 위해"
+    ],
+    "answer": 1,
+    "explanation": "함수도 객체이므로 속성을 붙일 수 있습니다. 관련 조각을 Tabs.Tab, Tabs.Panel 처럼 이름 아래에 모아 사용하는 쪽 코드를 읽기 쉽게 합니다."
+  },
+  {
+    "question": "<Layout sidebar={<Menu />}><Content /></Layout> 에서 Layout 이 자리를 나눠 받는 방식은?",
+    "choices": [
+      "children 과 JSX 를 값으로 받는 props (슬롯)",
+      "state",
+      "useEffect",
+      "에러 경계"
+    ],
+    "answer": 0,
+    "explanation": "여러 자리가 필요하면 children 외에도 JSX 를 값으로 받는 props(slot)를 사용해 각 자리에 원하는 내용을 넣게 합니다."
+  },
+  {
+    "question": "로직만 재사용하고 UI 는 사용하는 쪽이 자유롭게 정하게 하고 싶을 때 요즘 가장 흔히 쓰는 방법은?",
+    "choices": [
+      "클래스 상속",
+      "Error Boundary",
+      "컴포넌트를 복사해 붙여넣기",
+      "커스텀 훅"
+    ],
+    "answer": 3,
+    "explanation": "UI 와 무관한 상태 로직은 커스텀 훅으로 뽑는 것이 가장 단순합니다. Render Props 는 같은 일을 하지만 요즘은 덜 쓰입니다."
+  }
+]

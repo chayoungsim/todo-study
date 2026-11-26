@@ -1,0 +1,57 @@
+[
+  {
+    "question": "조건이 참일 때만 <Badge /> 를 보여주려는 코드로 올바른 것은? (count 는 숫자)",
+    "choices": [
+      "{count && <Badge />}",
+      "{count > 0 && <Badge />}",
+      "{if (count) <Badge />}",
+      "{count ? <Badge />}"
+    ],
+    "answer": 1,
+    "explanation": "count 가 0이면 {count && <Badge />} 는 화면에 0을 출력합니다. 왼쪽을 count > 0 처럼 불리언으로 만들어야 안전합니다."
+  },
+  {
+    "question": "JSX 안에서 null, undefined, false 는 화면에 어떻게 표시될까?",
+    "choices": [
+      "각각 \"null\", \"undefined\", \"false\" 라는 글자가 보인다",
+      "에러가 발생한다",
+      "아무것도 그려지지 않는다",
+      "빈 줄이 하나 생긴다"
+    ],
+    "answer": 2,
+    "explanation": "null, undefined, true, false 는 렌더링되지 않습니다. 그래서 조건부 렌더링에 활용할 수 있습니다."
+  },
+  {
+    "question": "리스트 항목에 key 를 주는 가장 큰 이유는?",
+    "choices": [
+      "CSS 스타일을 적용하기 위해",
+      "항목을 화면에 보이게 하기 위해",
+      "React 가 어떤 항목이 어떤 항목인지 구별해 효율적으로 갱신하도록",
+      "이벤트 핸들러를 연결하기 위해"
+    ],
+    "answer": 2,
+    "explanation": "key 는 항목의 이름표입니다. 추가, 삭제, 재정렬 때 React 가 바뀐 항목만 갱신하고 항목별 state 가 올바른 곳에 유지되게 합니다."
+  },
+  {
+    "question": "다음 중 key 로 가장 적절한 값은?",
+    "choices": [
+      "데이터에 원래 들어 있는 고유한 id",
+      "map 의 인덱스 (index)",
+      "Math.random() 으로 매 렌더링마다 만든 값",
+      "항목의 화면 위치"
+    ],
+    "answer": 0,
+    "explanation": "key 는 형제 사이에서 고유하고 변하지 않아야 합니다. 인덱스는 순서가 바뀌면 어긋나고, 매번 새로 만든 랜덤 값은 항목이 매번 다른 것으로 취급되어 비효율적입니다."
+  },
+  {
+    "question": "완료하지 않은 할 일만 보여주려 한다. 가장 좋은 방법은?",
+    "choices": [
+      "완료하지 않은 목록을 별도 state 로 만들고 effect 로 동기화한다",
+      "렌더링 중에 todos.filter((t) => !t.done) 로 계산한다",
+      "todos.sort() 로 원본을 정렬한다",
+      "완료한 항목을 배열에서 push 로 지운다"
+    ],
+    "answer": 1,
+    "explanation": "state 로 계산할 수 있는 값은 별도 state 를 두지 않고 렌더링 중에 계산합니다. 원본 state 는 그대로 둡니다."
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "question": "폼 제출에 성공한 뒤 코드로 다른 화면으로 이동할 때 사용하는 것은?",
+    "choices": [
+      "<Link> 컴포넌트를 렌더링한다",
+      "window.location 을 직접 바꾼다",
+      "useNavigate() 가 돌려주는 navigate 함수",
+      "useParams()"
+    ],
+    "answer": 2,
+    "explanation": "이벤트 핸들러에서 코드로 이동할 때는 useNavigate 의 navigate 를 호출합니다. Link 는 사용자의 클릭을 위한 것입니다."
+  },
+  {
+    "question": "로그인하지 않은 사용자가 보호된 화면을 열었을 때 렌더링 결과로 로그인 화면으로 보내려면?",
+    "choices": [
+      "<Navigate to=\"/login\" replace /> 를 반환한다",
+      "렌더링 중에 navigate('/login') 을 호출한다",
+      "alert 를 띄운다",
+      "페이지를 새로고침한다"
+    ],
+    "answer": 0,
+    "explanation": "렌더링 도중에는 navigate() 를 직접 호출하면 안 되고, <Navigate> 컴포넌트를 반환해 이동을 선언합니다."
+  },
+  {
+    "question": "navigate('/dashboard', { replace: true }) 에서 replace 의 효과는?",
+    "choices": [
+      "새로고침한다",
+      "현재 기록을 새 주소로 바꿔서 뒤로 가기로 이전 화면으로 돌아오지 못하게 한다",
+      "페이지를 교체해 상태를 모두 지운다",
+      "스크롤을 복원한다"
+    ],
+    "answer": 1,
+    "explanation": "replace 는 기록(히스토리)에 새 항목을 쌓지 않고 현재 항목을 대체합니다. 로그인 화면처럼 되돌아오면 어색한 화면에 알맞습니다."
+  },
+  {
+    "question": "필터나 정렬 같은 값을 useState 대신 useSearchParams 로 주소에 담았을 때의 장점이 아닌 것은?",
+    "choices": [
+      "새로고침해도 유지된다",
+      "링크로 같은 화면을 공유할 수 있다",
+      "뒤로 가기가 변경 이력을 따라간다",
+      "서버 비용이 자동으로 줄어든다"
+    ],
+    "answer": 3,
+    "explanation": "주소에 담으면 새로고침, 공유, 뒤로 가기에 강해집니다. 서버 비용과는 직접 관련이 없습니다."
+  },
+  {
+    "question": "searchParams.get(\"category\") 로 읽은 값을 사용할 때 올바른 태도는?",
+    "choices": [
+      "항상 올바른 값이라고 믿는다",
+      "숫자로 간주한다",
+      "사용자가 주소를 바꿀 수 있으니 허용된 값인지 검증하고 아니면 기본값을 쓴다",
+      "읽지 않고 state 에 복사한다"
+    ],
+    "answer": 2,
+    "explanation": "검색 파라미터는 문자열이고 누구나 주소창에서 바꿀 수 있습니다. 허용된 값인지 확인하고, 아니면 기본값으로 처리하세요."
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "question": "TanStack Query 가 주로 관리하는 상태는?",
+    "choices": [
+      "모달이 열렸는지 같은 UI 상태",
+      "서버에서 가져온 데이터의 사본(서버 상태)",
+      "폼에 입력 중인 글",
+      "다크모드 설정"
+    ],
+    "answer": 1,
+    "explanation": "TanStack Query 는 서버 상태(캐싱, 중복 제거, 재시도, 갱신)를 맡습니다. UI 상태나 입력 중인 값은 useState 나 Zustand 가 알맞습니다."
+  },
+  {
+    "question": "useQuery({ queryKey: [\"user\", id], queryFn: () => fetchUser(id) }) 에서 queryKey 의 역할은?",
+    "choices": [
+      "컴포넌트의 key 를 지정한다",
+      "함수를 호출하는 순서를 정한다",
+      "서버 주소를 지정한다",
+      "캐시의 이름표로, 같은 키는 같은 데이터로 취급한다"
+    ],
+    "answer": 3,
+    "explanation": "queryKey 는 캐시의 식별자입니다. 키가 같으면 같은 데이터이고, id 가 바뀌어 키가 바뀌면 다른 데이터로 보고 새로 가져옵니다."
+  },
+  {
+    "question": "queryFn 안에서 id 를 쓰는데 queryKey 에 id 를 넣지 않으면 어떤 문제가 생길까?",
+    "choices": [
+      "id 가 바뀌어도 같은 캐시로 보고 새로 가져오지 않아 오래된 데이터를 보여줄 수 있다",
+      "아무 문제 없다",
+      "문법 오류가 난다",
+      "서버가 요청을 거부한다"
+    ],
+    "answer": 0,
+    "explanation": "queryFn 이 의존하는 값은 queryKey 에 넣어야 합니다. 그렇지 않으면 id 가 바뀌어도 키가 같아 캐시를 재사용하는 버그가 생깁니다. useEffect 의존성 배열과 같은 원칙입니다."
+  },
+  {
+    "question": "staleTime: 60_000 의 의미는?",
+    "choices": [
+      "60초 뒤에 캐시를 지운다",
+      "요청이 60초를 넘으면 실패 처리한다",
+      "60초마다 무조건 다시 요청한다",
+      "가져온 데이터를 60초 동안 신선한 것으로 보고 그동안은 다시 가져오지 않는다"
+    ],
+    "answer": 3,
+    "explanation": "staleTime 동안은 데이터가 신선하다고 보고 같은 쿼리를 다시 요청하지 않고 캐시를 사용합니다. 기본값 0 은 가져오는 즉시 오래된 것으로 취급합니다."
+  },
+  {
+    "question": "isPending 과 isFetching 의 차이로 올바른 것은?",
+    "choices": [
+      "둘은 항상 같다",
+      "isPending 은 데이터가 아직 한 번도 없는 상태, isFetching 은 지금 요청이 진행 중인 상태다",
+      "isPending 은 에러 상태다",
+      "isFetching 은 캐시가 없을 때만 true 다"
+    ],
+    "answer": 1,
+    "explanation": "isPending 은 아직 데이터가 없는 처음 로딩을 뜻합니다. isFetching 은 캐시가 있더라도 뒤에서 다시 가져오는 중이면 true 가 되어, 작은 새로고침 표시에 쓸 수 있습니다."
+  }
+]

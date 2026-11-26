@@ -1,0 +1,31 @@
+[
+  {
+    "question": "props에 대한 설명으로 올바른 것은?",
+    "choices": [
+      "자식이 부모의 값을 직접 바꾸는 통로다",
+      "부모가 자식에게 넘기는 읽기 전용 데이터다",
+      "컴포넌트 안에서 자유롭게 수정할 수 있는 값이다",
+      "컴포넌트 이름을 지정하는 문법이다"
+    ],
+    "answer": 1,
+    "explanation": "props는 부모에서 자식으로 흐르는 읽기 전용 데이터입니다. 받은 쪽에서 직접 수정하면 안 됩니다."
+  },
+  {
+    "question": "숫자 30을 age props로 올바르게 넘기는 코드는?",
+    "choices": ["<Profile age=\"30\" />", "<Profile age=30 />", "<Profile age={30} />", "<Profile age=(30) />"],
+    "answer": 2,
+    "explanation": "숫자, 불리언, 배열, 함수는 중괄호로 넘깁니다. 따옴표로 넘기면 문자열 \"30\"이 됩니다."
+  },
+  {
+    "question": "<Card><p>안녕</p></Card> 에서 <p>안녕</p>은 Card에 어떤 이름의 props로 전달되나?",
+    "choices": ["content", "body", "inner", "children"],
+    "answer": 3,
+    "explanation": "태그 사이에 넣은 내용은 항상 children이라는 이름의 props로 전달됩니다."
+  },
+  {
+    "question": "function Badge({ count = 0 }) 에서 count 를 넘기지 않고 <Badge /> 로 쓰면 count 의 값은?",
+    "choices": ["undefined", "null", "0", "에러가 난다"],
+    "answer": 2,
+    "explanation": "구조 분해 할당의 기본값 = 0 이 적용되어 count 는 0이 됩니다."
+  }
+]

@@ -1,6 +1,6 @@
 import { lazy } from "react";
-import { ThemeProvider } from "next-themes";
 import AppLayout from "@/components/layout/AppLayout";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import HomePage from "@/pages/home/HomePage";
@@ -13,21 +13,21 @@ const DayPage = lazy(() => import("@/pages/day/DayPage"));
 
 export default function App() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-    <TooltipProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/days" element={<CoursePage />} />
-            <Route path="/days/:day" element={<DayPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-      <Toaster />
-    </TooltipProvider>
+    <ThemeProvider>
+      <TooltipProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/days" element={<CoursePage />} />
+              <Route path="/days/:day" element={<DayPage />} />
+              <Route path="/settings" element={<SettingsPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+        <Toaster />
+      </TooltipProvider>
     </ThemeProvider>
   );
 }

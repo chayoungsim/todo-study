@@ -4,7 +4,7 @@ import {
   SandpackPreview,
   SandpackProvider,
 } from "@codesandbox/sandpack-react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/hooks/useTheme";
 
 interface CodeSandboxProps {
   /** example.tsx 원문. default export 컴포넌트가 미리보기에 렌더링된다. */

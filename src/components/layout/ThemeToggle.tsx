@@ -1,5 +1,5 @@
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/hooks/useTheme";
 import { Button } from "@/components/ui/button";
 
 /** 라이트/다크 전환. 처음에는 OS 설정(system)을 따르고, 누르면 사용자 선택이 저장된다. */

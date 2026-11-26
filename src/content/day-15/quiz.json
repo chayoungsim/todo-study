@@ -1,0 +1,57 @@
+[
+  {
+    "question": "useDeferredValue(query) 가 돌려주는 값은?",
+    "choices": [
+      "query 를 즉시 따라가는 같은 값",
+      "query 를 나중에, React 가 여유 있을 때 따라오는 복사본",
+      "query 를 영구히 고정한 값",
+      "query 의 이전 이전 값"
+    ],
+    "answer": 1,
+    "explanation": "deferredQuery 는 query 가 바뀐 뒤 React 가 여유가 있을 때 따라옵니다. 그 사이 무거운 목록은 이전 값으로 보이고, 입력창은 즉시 반응합니다."
+  },
+  {
+    "question": "useTransition 이 돌려주는 값은?",
+    "choices": [
+      "[isPending, startTransition]",
+      "[state, setState]",
+      "[value, deferred]",
+      "{ start, stop }"
+    ],
+    "answer": 0,
+    "explanation": "useTransition 은 진행 중인지 나타내는 isPending 과, 갱신을 낮은 우선순위로 표시하는 startTransition 함수를 돌려줍니다."
+  },
+  {
+    "question": "다음 중 startTransition 안에 넣으면 안 되는 갱신은?",
+    "choices": [
+      "탭을 바꾸는 setTab",
+      "무거운 목록을 갱신하는 setItems",
+      "입력창의 value 를 바꾸는 setQuery",
+      "페이지 번호를 바꾸는 setPage"
+    ],
+    "answer": 2,
+    "explanation": "입력창의 value 는 즉시 반영돼야 하는 급한 갱신입니다. Transition 에 넣으면 입력이 뒤로 밀려 오히려 버벅입니다."
+  },
+  {
+    "question": "useTransition, useDeferredValue 에 대한 설명으로 올바른 것은?",
+    "choices": [
+      "렌더링 자체를 빠르게 만들어 준다",
+      "느린 렌더링 계산을 자동으로 줄여 준다",
+      "서버 요청을 빠르게 만든다",
+      "무거운 갱신을 급하지 않은 것으로 표시해, 입력이 끊기지 않게 도와준다"
+    ],
+    "answer": 3,
+    "explanation": "렌더링 자체가 빨라지는 것이 아니라 급한 갱신을 먼저 처리하게 해 줍니다. 근본적으로 느리다면 계산을 줄이는 것(memo, useMemo 등)이 먼저입니다."
+  },
+  {
+    "question": "상태를 바꾸는 코드에 접근할 수 있을 때와, 값만 전달받을 때 각각 알맞은 훅은?",
+    "choices": [
+      "바꿀 수 있을 때 useDeferredValue, 받을 때 useTransition",
+      "둘 다 useTransition",
+      "바꿀 수 있을 때 useTransition, 값만 받을 때 useDeferredValue",
+      "둘 다 useDeferredValue"
+    ],
+    "answer": 2,
+    "explanation": "setState 를 직접 호출하는 곳에서는 startTransition 으로 감싸고, props 처럼 값만 받는 쪽에서는 useDeferredValue 로 그 값을 늦게 따라가게 합니다."
+  }
+]

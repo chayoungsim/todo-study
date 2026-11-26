@@ -1,0 +1,57 @@
+[
+  {
+    "question": "<Route path=\"/users/:userId\" /> 에서 :userId 의 의미는?",
+    "choices": [
+      "그 자리에 어떤 값이 와도 맞고, 값을 변수로 읽을 수 있다",
+      "정확히 \":userId\" 라는 글자와 맞는다",
+      "숫자만 맞는다",
+      "선택 사항이다"
+    ],
+    "answer": 0,
+    "explanation": ":이름 은 동적 구간입니다. /users/1, /users/42 처럼 그 자리의 값이 무엇이든 맞고, useParams 로 읽습니다."
+  },
+  {
+    "question": "useParams() 로 읽은 userId 의 타입과 올바른 사용은?",
+    "choices": [
+      "number 이므로 바로 계산에 쓴다",
+      "boolean 이다",
+      "객체이다",
+      "항상 문자열(또는 undefined)이므로 숫자가 필요하면 Number() 로 바꾸고 잘못된 값을 확인한다"
+    ],
+    "answer": 3,
+    "explanation": "주소에서 읽은 값은 항상 문자열입니다. 사용자가 주소를 직접 고칠 수 있으니 변환 후 유효한지 확인해야 합니다."
+  },
+  {
+    "question": "중첩 라우트에서 부모 컴포넌트가 자식 Route 의 화면이 나올 자리를 정하는 컴포넌트는?",
+    "choices": [
+      "Link",
+      "Outlet",
+      "Routes",
+      "Navigate"
+    ],
+    "answer": 1,
+    "explanation": "부모 레이아웃에 Outlet 을 두면 그 자리에 현재 주소와 맞는 자식 Route 의 element 가 렌더링됩니다."
+  },
+  {
+    "question": "<Route index element={...} /> 는 언제 보일까?",
+    "choices": [
+      "항상",
+      "404 일 때",
+      "부모 경로 그대로(자식 경로 없이) 접근했을 때의 기본 화면",
+      "로그인하지 않았을 때"
+    ],
+    "answer": 2,
+    "explanation": "index Route 는 부모 경로와 정확히 같은 주소에서 보여줄 기본 화면입니다. 예를 들어 /users 일 때의 안내 화면입니다."
+  },
+  {
+    "question": "존재하지 않는 id 로 /users/99 에 접근했을 때 올바른 처리는?",
+    "choices": [
+      "데이터를 찾지 못했을 때를 확인해 안내 화면을 보여준다",
+      "아무 처리 없이 user.name 을 읽는다",
+      "에러가 날 때까지 둔다",
+      "항상 홈으로 이동시킨다"
+    ],
+    "answer": 0,
+    "explanation": "주소는 누구나 바꿀 수 있어 없는 데이터가 올 수 있습니다. find 결과가 undefined 일 때를 확인해 사용자에게 알려야 합니다."
+  }
+]

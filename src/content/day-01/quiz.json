@@ -1,0 +1,20 @@
+[
+  {
+    "question": "React 컴포넌트 이름의 규칙으로 올바른 것은?",
+    "choices": ["소문자로 시작한다", "대문자로 시작한다", "숫자로 시작한다", "규칙이 없다"],
+    "answer": 1,
+    "explanation": "소문자로 시작하면 React가 HTML 기본 태그로 해석합니다. 컴포넌트는 대문자로 시작해야 합니다."
+  },
+  {
+    "question": "JSX에서 CSS 클래스를 지정할 때 쓰는 속성은?",
+    "choices": ["class", "className", "cssClass", "styleClass"],
+    "answer": 1,
+    "explanation": "class 는 JavaScript 예약어라서 JSX에서는 className 을 사용합니다."
+  },
+  {
+    "question": "JSX 안에서 JavaScript 값을 출력하려면?",
+    "choices": ["{{ 값 }}", "${ 값 }", "{ 값 }", "<% 값 %>"],
+    "answer": 2,
+    "explanation": "JSX에서는 중괄호 { } 안에 JavaScript 표현식을 넣습니다."
+  }
+]
